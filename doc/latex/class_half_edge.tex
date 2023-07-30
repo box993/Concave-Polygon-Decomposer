@@ -1,0 +1,49 @@
+\hypertarget{class_half_edge}{}\doxysection{Half\+Edge Class Reference}
+\label{class_half_edge}\index{HalfEdge@{HalfEdge}}
+
+
+Directed edge of a \mbox{\hyperlink{class_d_c_e_l}{DCEL}}. This represents an edge originating from the origin \mbox{\hyperlink{class_vertex}{Vertex}}.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_half_edge_a9694f1dbddb8e3017ab75f5156d11da3}\label{class_half_edge_a9694f1dbddb8e3017ab75f5156d11da3}} 
+{\bfseries Half\+Edge} ()
+\begin{DoxyCompactList}\small\item\em Constructor of the \mbox{\hyperlink{class_half_edge}{Half\+Edge}} class. It sets everything to NULL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_half_edge_a8c90288f66768884f42b0588055eb4bf}\label{class_half_edge_a8c90288f66768884f42b0588055eb4bf}} 
+\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ {\bfseries origin}
+\item 
+\mbox{\Hypertarget{class_half_edge_a37e7696a7131767a0c76e45ed69be4c5}\label{class_half_edge_a37e7696a7131767a0c76e45ed69be4c5}} 
+\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ {\bfseries twin}
+\item 
+\mbox{\Hypertarget{class_half_edge_a08080cb14f0da4274e47a56f24071196}\label{class_half_edge_a08080cb14f0da4274e47a56f24071196}} 
+\mbox{\hyperlink{class_face}{Face}} $\ast$ {\bfseries face}
+\item 
+\mbox{\Hypertarget{class_half_edge_a5918db069bb8b4a89e471c01a14fc6e1}\label{class_half_edge_a5918db069bb8b4a89e471c01a14fc6e1}} 
+\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ {\bfseries next}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Directed edge of a \mbox{\hyperlink{class_d_c_e_l}{DCEL}}. This represents an edge originating from the origin \mbox{\hyperlink{class_vertex}{Vertex}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & This \mbox{\hyperlink{class_vertex}{Vertex}} is the origin of the half-\/edge \\
+\hline
+{\em twin} & This half edge represents the equivalent edge in the opposite direction which is inbound on the origin \\
+\hline
+{\em face} & This represents the face associated with this half-\/edge \\
+\hline
+{\em next} & This represents the half-\/edge that follows the current half-\/edge \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/DAAFinal\+\_\+\+Medini.\+cpp\end{DoxyCompactItemize}

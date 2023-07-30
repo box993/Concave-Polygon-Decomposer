@@ -1,0 +1,164 @@
+\hypertarget{class_vertex}{}\doxysection{Vertex Class Reference}
+\label{class_vertex}\index{Vertex@{Vertex}}
+
+
+Point in the \mbox{\hyperlink{class_d_c_e_l}{DCEL}}. This class represents a singular point in the \mbox{\hyperlink{class_d_c_e_l}{DCEL}}.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_vertex_a66c830addc76350cebd946f1e9084f65}{intersection}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v1, \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v2)
+\begin{DoxyCompactList}\small\item\em This function calculates the x value of the coordinate of intersection of the line passing through v1,v2 and the line passing through the current vertice, parallel to the x axis. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vertex_a7396b9d9dc194369bb5f6750e3204ac8}{side}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v1, \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v2, int val)
+\begin{DoxyCompactList}\small\item\em This function returns if the \mbox{\hyperlink{class_vertex}{Vertex}} calling the function is on the same side of the line created by v1 and v2 as last\mbox{[}Lm\mbox{]}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vertex_a04628206e863aa58e601265b10aadeb2}{inside\+Rect}} (double x1, double x2, double y1, double y2)
+\begin{DoxyCompactList}\small\item\em This function checks if the vertex calling is inside the rectangle defined by x1, x2, y1, y2. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vertex_aeeb0889b281983eac0af68cba27a6ad2}{inside}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$st, \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ed)
+\begin{DoxyCompactList}\small\item\em Checks if the calling vertex is inside the polygon created with st as first vertex and ed as last vertex. It Uses the ray casting algorithm to find if the point is inside the polygon or not. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ \mbox{\hyperlink{class_vertex_a78c7da1c19d2c33933156811d525b44d}{next}} ()
+\begin{DoxyCompactList}\small\item\em Finds and returns the next \mbox{\hyperlink{class_vertex}{Vertex}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_vertex_a5b66a7b6f0cea6d0912ba4bf17c75f2b}\label{class_vertex_a5b66a7b6f0cea6d0912ba4bf17c75f2b}} 
+{\bfseries Vertex} (double x\+\_\+, double y\+\_\+)
+\item 
+\mbox{\Hypertarget{class_vertex_af0cf221882f14ccfcd93885fee9aa9a8}\label{class_vertex_af0cf221882f14ccfcd93885fee9aa9a8}} 
+{\bfseries Vertex} (double x\+\_\+, double y\+\_\+, \mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$incident\+Edge\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vertex_af2602132c3297d81bc9f8ee54867445b}\label{class_vertex_af2602132c3297d81bc9f8ee54867445b}} 
+double {\bfseries x}
+\item 
+\mbox{\Hypertarget{class_vertex_a7563c83da86f4a0831144bc823fec2b0}\label{class_vertex_a7563c83da86f4a0831144bc823fec2b0}} 
+double {\bfseries y}
+\item 
+\mbox{\Hypertarget{class_vertex_ad184af21e1f2e7fbd1d49099f3111b34}\label{class_vertex_ad184af21e1f2e7fbd1d49099f3111b34}} 
+\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ {\bfseries incident\+Edge}
+\item 
+\mbox{\Hypertarget{class_vertex_a7b471cbeed11e96e22816df32b8f25ae}\label{class_vertex_a7b471cbeed11e96e22816df32b8f25ae}} 
+\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ {\bfseries prev}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Point in the \mbox{\hyperlink{class_d_c_e_l}{DCEL}}. This class represents a singular point in the \mbox{\hyperlink{class_d_c_e_l}{DCEL}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the vertex \\
+\hline
+{\em y} & y-\/coordinate of the vertex \\
+\hline
+{\em incident\+Edge} & The \mbox{\hyperlink{class_half_edge}{Half\+Edge}} originating from the current vertex \\
+\hline
+{\em prev} & The \mbox{\hyperlink{class_half_edge}{Half\+Edge}} originating from the current vertex but in the opposite direction \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vertex_aeeb0889b281983eac0af68cba27a6ad2}\label{class_vertex_aeeb0889b281983eac0af68cba27a6ad2}} 
+\index{Vertex@{Vertex}!inside@{inside}}
+\index{inside@{inside}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{inside()}{inside()}}
+{\footnotesize\ttfamily bool Vertex\+::inside (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{st,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{ed }\end{DoxyParamCaption})}
+
+
+
+Checks if the calling vertex is inside the polygon created with st as first vertex and ed as last vertex. It Uses the ray casting algorithm to find if the point is inside the polygon or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em st} & starting \mbox{\hyperlink{class_vertex}{Vertex}} of the polygon \\
+\hline
+{\em ed} & ending \mbox{\hyperlink{class_vertex}{Vertex}} of the polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the calling vertex is inside the polygon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vertex_a04628206e863aa58e601265b10aadeb2}\label{class_vertex_a04628206e863aa58e601265b10aadeb2}} 
+\index{Vertex@{Vertex}!insideRect@{insideRect}}
+\index{insideRect@{insideRect}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{insideRect()}{insideRect()}}
+{\footnotesize\ttfamily bool Vertex\+::inside\+Rect (\begin{DoxyParamCaption}\item[{double}]{x1,  }\item[{double}]{x2,  }\item[{double}]{y1,  }\item[{double}]{y2 }\end{DoxyParamCaption})}
+
+
+
+This function checks if the vertex calling is inside the rectangle defined by x1, x2, y1, y2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & \mbox{\hyperlink{class_vertex}{Vertex}} of the rectangle \\
+\hline
+{\em x2} & \mbox{\hyperlink{class_vertex}{Vertex}} of the rectangle \\
+\hline
+{\em y1} & \mbox{\hyperlink{class_vertex}{Vertex}} of the rectangle \\
+\hline
+{\em y2} & \mbox{\hyperlink{class_vertex}{Vertex}} of the rectangle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the vertex is inside the rectangle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vertex_a66c830addc76350cebd946f1e9084f65}\label{class_vertex_a66c830addc76350cebd946f1e9084f65}} 
+\index{Vertex@{Vertex}!intersection@{intersection}}
+\index{intersection@{intersection}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{intersection()}{intersection()}}
+{\footnotesize\ttfamily double Vertex\+::intersection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v1,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v2 }\end{DoxyParamCaption})}
+
+
+
+This function calculates the x value of the coordinate of intersection of the line passing through v1,v2 and the line passing through the current vertice, parallel to the x axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & This is the first \mbox{\hyperlink{class_vertex}{Vertex}} of the line \\
+\hline
+{\em v2} & This is the second \mbox{\hyperlink{class_vertex}{Vertex}} of the line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the x value of the point of intersection of the line passing through v1,v2 and the line passing through the current vertice, parallel to the x axis. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vertex_a78c7da1c19d2c33933156811d525b44d}\label{class_vertex_a78c7da1c19d2c33933156811d525b44d}} 
+\index{Vertex@{Vertex}!next@{next}}
+\index{next@{next}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ Vertex\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Finds and returns the next \mbox{\hyperlink{class_vertex}{Vertex}}. 
+
+\begin{DoxyReturn}{Returns}
+Returns the next \mbox{\hyperlink{class_vertex}{Vertex}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vertex_a7396b9d9dc194369bb5f6750e3204ac8}\label{class_vertex_a7396b9d9dc194369bb5f6750e3204ac8}} 
+\index{Vertex@{Vertex}!side@{side}}
+\index{side@{side}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{side()}{side()}}
+{\footnotesize\ttfamily bool Vertex\+::side (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v1,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v2,  }\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+This function returns if the \mbox{\hyperlink{class_vertex}{Vertex}} calling the function is on the same side of the line created by v1 and v2 as last\mbox{[}Lm\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & First \mbox{\hyperlink{class_vertex}{Vertex}} of the line \\
+\hline
+{\em v2} & Second \mbox{\hyperlink{class_vertex}{Vertex}} of the line \\
+\hline
+{\em val} & Val is the value returned when you evaluate last\mbox{[}lm\mbox{]} on the line created by v1 and v1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a boolean value of whether the point is on the correct side or not 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/DAAFinal\+\_\+\+Medini.\+cpp\end{DoxyCompactItemize}

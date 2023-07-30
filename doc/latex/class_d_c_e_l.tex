@@ -1,0 +1,92 @@
+\hypertarget{class_d_c_e_l}{}\doxysection{DCEL Class Reference}
+\label{class_d_c_e_l}\index{DCEL@{DCEL}}
+
+
+Class to represent a doubly connected edge list. This is the class we use to decompose the polygon. This class represents our implimentation of the doubly connected edge list.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_c_e_l_a37a54439be02e67b2a7250f4d6c22f8b}\label{class_d_c_e_l_a37a54439be02e67b2a7250f4d6c22f8b}} 
+{\bfseries DCEL} (vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \&vertices)
+\item 
+void \mbox{\hyperlink{class_d_c_e_l_a96f929fb9ed7a94da3875d1a6c2555e0}{split}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v1, \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v2)
+\begin{DoxyCompactList}\small\item\em This function splits the \mbox{\hyperlink{class_face}{Face}} into two faces or two plygons using v1 and v2 as the diagonal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_c_e_l_a197d1a6304e484295ff902b2962db3d2}\label{class_d_c_e_l_a197d1a6304e484295ff902b2962db3d2}} 
+void {\bfseries algorithm1} ()
+\begin{DoxyCompactList}\small\item\em This function implements algorithm 1 from the paper. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_c_e_l_af9786e28061f12fcbd72e7dcd3aa65ef}\label{class_d_c_e_l_af9786e28061f12fcbd72e7dcd3aa65ef}} 
+void {\bfseries merging} ()
+\begin{DoxyCompactList}\small\item\em This function implements the merging algorithm from the paper. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_c_e_l_ade0e662c344e8b99fd3276c1694439f3}\label{class_d_c_e_l_ade0e662c344e8b99fd3276c1694439f3}} 
+vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ {\bfseries vertices}
+\item 
+\mbox{\Hypertarget{class_d_c_e_l_ae32e839ca7ccd37f05b4f0659fa3a572}\label{class_d_c_e_l_ae32e839ca7ccd37f05b4f0659fa3a572}} 
+vector$<$ \mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ $>$ {\bfseries half\+Edges}
+\item 
+\mbox{\Hypertarget{class_d_c_e_l_a2d7fd9417422b18f18e8c55f1d1f49e2}\label{class_d_c_e_l_a2d7fd9417422b18f18e8c55f1d1f49e2}} 
+vector$<$ \mbox{\hyperlink{class_face}{Face}} $\ast$ $>$ {\bfseries faces}
+\item 
+\mbox{\Hypertarget{class_d_c_e_l_af6bfc7e4a6c31286448fb964f281e41c}\label{class_d_c_e_l_af6bfc7e4a6c31286448fb964f281e41c}} 
+vector$<$ \mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ $>$ {\bfseries diags}
+\item 
+\mbox{\Hypertarget{class_d_c_e_l_adcf10d1636ebb6c1701f23323b489656}\label{class_d_c_e_l_adcf10d1636ebb6c1701f23323b489656}} 
+map$<$ int, \mbox{\hyperlink{class_face}{Face}} $\ast$ $>$ {\bfseries mp}
+\item 
+\mbox{\Hypertarget{class_d_c_e_l_a569e373670a93974f5c5f6b0ef345619}\label{class_d_c_e_l_a569e373670a93974f5c5f6b0ef345619}} 
+map$<$ \mbox{\hyperlink{class_face}{Face}} $\ast$, int $>$ {\bfseries mp1}
+\item 
+\mbox{\Hypertarget{class_d_c_e_l_a2df24f03c8648270e9167061318a0ac6}\label{class_d_c_e_l_a2df24f03c8648270e9167061318a0ac6}} 
+vector$<$ bool $>$ {\bfseries LDP}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to represent a doubly connected edge list. This is the class we use to decompose the polygon. This class represents our implimentation of the doubly connected edge list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & This is a list of all of the vertices in the dcel \\
+\hline
+{\em half\+Edges} & This is a list of all halfedges in the dcel \\
+\hline
+{\em faces} & This is a list of all faces in the dcel \\
+\hline
+{\em diags} & This is the list of all the new edges that we add to the polygon in-\/order to decompose it \\
+\hline
+{\em mp} & We use this map to link an integer i to the face of the ith polygon that we have decomposed \\
+\hline
+{\em mp1} & We use this map to link a \mbox{\hyperlink{class_face}{Face}} to its assigned integer \\
+\hline
+{\em LDP} & We use this vector to keep track if the ith face is part of the final decomposed polygon or not. We use mp and mp1 inorder to get to index of the face we want to check. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_c_e_l_a96f929fb9ed7a94da3875d1a6c2555e0}\label{class_d_c_e_l_a96f929fb9ed7a94da3875d1a6c2555e0}} 
+\index{DCEL@{DCEL}!split@{split}}
+\index{split@{split}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily void DCEL\+::split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v1,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v2 }\end{DoxyParamCaption})}
+
+
+
+This function splits the \mbox{\hyperlink{class_face}{Face}} into two faces or two plygons using v1 and v2 as the diagonal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & One end of the diagonal with which we want to split the \mbox{\hyperlink{class_face}{Face}} \\
+\hline
+{\em v2} & One end of the diagonal with which we want to split the \mbox{\hyperlink{class_face}{Face}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/DAAFinal\+\_\+\+Medini.\+cpp\end{DoxyCompactItemize}
